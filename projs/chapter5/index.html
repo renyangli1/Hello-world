@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    // // var colors = [];
+    // // var count = colors.unshift('red','green');
+    // // count = colors.unshift('black');
+    // // var item = colors.pop();
+
+    // // function compare(value1, value2) {
+    // //     if (value1 < value2) {
+    // //         return 1;
+    // //     } else if(value1 > value2) {
+    // //         return -1;
+    // //     } else {
+    // //         return 0;
+    // //     }
+    // // }
+    // // var values = [0,1,5,10,15];
+    // // values.sort(compare);
+    // // console.log(values);
+    // var colors = ['red','green','blue'];
+    // // var colors2 = colors.concat('yellow',['black','brown']);
+    // // var colors = ['red','green','blue','yellow','purple'];
+    // // var colors2 = colors.slice(1);
+    // // var colors3 = colors.slice(1,2);
+    // var removed = colors.splice(0,1);
+    // removed = colors.splice(1,0,'yellow','orange');
+    // removed = colors.splice(1,1,'red','purple');
+    // var numbers = [1,2,3,4,5,4,3,2,1];
+    // // console.log(numbers.indexOf(4));
+    // // console.log(numbers.lastIndexOf(4));
+    // // console.log(numbers.indexOf(4,4));
+    // // console.log(numbers.lastIndexOf(4,4));
+    // var person = {name:'Nicholas'};
+    // var people = [{name: 'Nicholas'}];
+    // var morePeople = [person];
+    // console.log(people.indexOf(person));
+
+
+    // var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+    // var everyResult = numbers.every(function(item, index, array) {
+    //     // debugger
+    //     return (item > 2);
+    // });
+    // var someResult = numbers.some(function(item, index, array) {
+    //     return (item > 2);
+    // });
+    // var filterResult = numbers.filter(function(item, index, array) {
+    //     return (item > 2);
+    // });
+    // var mapResult = numbers.map(function(item,index,array){
+    // 	return item * 2;
+    // });
+
+    // numbers.forEach(function(item,index,array){
+    // 	debugger;
+    // });
+    // var values = [1,2,3,4,5];
+    // var sum = values.reduce(function(prev,cur,index,array){
+    // 	return prev + cur;
+    // });
+    var book = {
+    	title: 'Professional Javascript',
+    	authors:[
+    		'Nicholas C.zakas'
+    	],
+    	edition: 3,
+    	month: 23123123123123123123,
+    	year: 2011,
+    	// toJSON: function(){
+    	// 	return this.title;
+    	// }
+    	releaseDate: new Date(2011,1,1)
+    };
+    var jsonText = JSON.stringify(book);
+    var bookCopy =  JSON.parse(jsonText);
+    var jsonText = JSON.stringify(book,["title","edition"]);
+    var jsonText = JSON.stringify(book,function(key,value){
+    	switch(key){
+    		case 'authors':
+    			return value.join(',');
+    		case 'year':
+    			return 5000;
+    		case 'edition':
+    			return undefined;
+    		default:
+    			return value;
+    	}
+    });
+    var jsonText = JSON.stringify(book,null,4);
+    var jsonText = JSON.stringify(book,null,' - -');
+    var jsonText = JSON.stringify(book);
+    var bookCopy = JSON.parse(jsonText,function(key,value){
+    	if(key == 'month'){
+    		return value.toString();
+    	}else{
+    		return value;
+    	}
+    });
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
