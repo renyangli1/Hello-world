@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    div {
+        height: 100px;
+        width: 300px;
+        margin: 10px;
+        background-color: #ffd;
+        overflow: auto;
+    }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <a href="">12312</a>
+    <script>
+    var last, diff;
+    $('div').click(function(event) {
+        debugger;
+        if (last) {
+            diff = event.timeStamp - last;
+            $('div').append('time since last event: ' + diff + '<br/>');
+        } else {
+            $('div').append('Click again.<br/>');
+        }
+        last = event.timeStamp;
+    });
+    $('a').click(function(event) {
+        alert(event.type); // "click"
+    });
+    </script>
+</body>
+
+</html>

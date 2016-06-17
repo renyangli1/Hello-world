@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style type="text/css">
+    .p-test{
+    	width: 300px;
+    	height: 500px;
+    	border:1px solid #f00;
+		overflow: hidden;
+    }
+    .div-test {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+    }
+    </style>
+</head>
+
+<body>
+    <input id="whichkey" value="type something" />
+    <div id="log"></div>
+    <p class="p-test">
+    	<span>12312312312321</span>
+        <div class="div-test">1231312</div>
+    </p>
+    <script>
+    $('#whichkey').bind('keydown', function(e) {
+        $('#log').html(e.type + ': ' + e.which);
+    });
+    $("p").click(function(event) {
+        alert(event.currentTarget === this); // true
+    });
+    </script>
+</body>
+
+</html>

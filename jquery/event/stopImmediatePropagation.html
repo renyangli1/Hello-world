@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    p {
+        height: 30px;
+        width: 150px;
+        background-color: #ccf;
+    }
+    
+    div {
+        height: 30px;
+        width: 150px;
+        background-color: #cfc;
+    }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <p>paragraph</p>
+    <div>division</div>
+    <script>
+    $("p").click(function(event) {
+        event.stopImmediatePropagation();
+    });
+    $("p").click(function(event) { // This function won't be executed 
+        $(this).css("background-color", "#f00");
+    });
+    $("div").click(function(event) { // This function will be executed 
+        $(this).css("background-color", "#f00");
+    });
+    </script>
+</body>
+
+</html>
